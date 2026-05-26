@@ -1,22 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo dos Cavalos | Paixão e Elegância</title>
+    <title>Mundo dos Cavalos | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">🐴 Cavalo**Master**</div>
+        <div class="logo">🐴 Cavalo<span>Master</span></div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#racas">Raças</a></li>
                 <li><a href="#cuidados">Cuidados</a></li>
-                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +24,10 @@
         <div class="hero-content">
             <h1>A Beleza e a Força dos Cavalos</h1>
             <p>Descubra o fascinante universo equino, suas raças, cuidados e curiosidades.</p>
-            <a href="#racas" class="btn">Explorar Raças</a>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Busque por uma raça (ex: Frísio)...">
+                <button id="search-button">Buscar</button>
+            </div>
         </div>
     </section>
 
@@ -33,165 +35,8 @@
         <h2>Grandes Raças</h2>
         <p class="subtitle">Conheça algumas das raças mais famosas e imponentes do mundo.</p>
         
-        <div class="grid-racas">/**
- * ARCHIVO: index.js
- * Função: Core/Maestro do site, gerenciamento de dados e busca estruturada.
- */
-
-// 1. SIMULAÇÃO DE BANCO DE DADOS (Caso os arquivos da sua imagem tenham mais cavalos, basta adicioná-los aqui)
-const BANCO_DE_CAVALOS = [
-    {
-        id: 1,
-        raca: "Puro Sangue Lusitano",
-        origem: "Portugal",
-        temperamento: "Dócil e Inteligente",
-        caracteristica: "Excelente para adestramento e alta escola."
-    },
-    {
-        id: 2,
-        raca: "Quarto de Milha",
-        origem: "Estados Unidos",
-        temperamento: "Versátil e Veloz",
-        caracteristica: "O mais rápido em curtas distâncias, ótimo para trabalho."
-    },
-    {
-        id: 3,
-        raca: "Frísio (Friesian)",
-        origem: "Holanda",
-        temperamento: "Imponente e Gentil",
-        caracteristica: "Famoso por sua pelagem preta brilhante e crina longa."
-    }
-];
-
-// 2. INICIALIZAÇÃO DO SISTEMA
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("⚡ Sistema Index principal ativado.");
-    
-    // Configura uma barra de pesquisa dinâmica se ela existir no futuro
-    inicializarBusca();/**
- * ARCHIVO: index.js
- * Função: Core/Maestro do site, gerenciamento de dados e busca estruturada.
- */
-
-// 1. SIMULAÇÃO DE BANCO DE DADOS (Caso os arquivos da sua imagem tenham mais cavalos, basta adicioná-los aqui)
-const BANCO_DE_CAVALOS = [
-    {
-        id: 1,
-        raca: "Puro Sangue Lusitano",
-        origem: "Portugal",
-        temperamento: "Dócil e Inteligente",
-        caracteristica: "Excelente para adestramento e alta escola."
-    },
-    {
-        id: 2,
-        raca: "Quarto de Milha",
-        origem: "Estados Unidos",
-        temperamento: "Versátil e Veloz",
-        caracteristica: "O mais rápido em curtas distâncias, ótimo para trabalho."
-    },
-    {
-        id: 3,
-        raca: "Frísio (Friesian)",
-        origem: "Holanda",
-        temperamento: "Imponente e Gentil",
-        caracteristica: "Famoso por sua pelagem preta brilhante e crina longa."
-    }
-];
-
-// 2. INICIALIZAÇÃO DO SISTEMA
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("⚡ Sistema Index principal ativado.");
-    
-    // Configura uma barra de pesquisa dinâmica se ela existir no futuro
-    inicializarBusca();
-    
-    // Adiciona um contador de cliques/visitas interativo nos cards existentes
-    configurarContadorDeInteracoes();
-});
-
-// 3. FUNÇÃO PARA BUSCAR INFORMAÇÕES (Expansível para o seu site)
-function inicializarBusca() {
-    // Cria uma função global que você pode chamar pelo console ou por um input de texto
-    window.buscarCavalo = function(termo) {
-        const resultado = BANCO_DE_CAVALOS.filter(cavalo => 
-            cavalo.raca.toLowerCase().includes(termo.toLowerCase())
-        );
-        
-        if (resultado.length > 0) {
-            console.log(`🔎 Encontrado(s) ${resultado.length} resultado(s):`, resultado);
-            return resultado;
-        } else {
-            console.log("❌ Nenhuma raça encontrada com esse nome.");
-            return [];
-        }
-    };
-}
-
-// 4. CONTADOR DE CLIQUES (Métrica simples de engajamento)
-function configurarContadorDeInteracoes() {
-    const cards = document.querySelectorAll(".card");
-    
-    cards.forEach((card, index) => {
-        let cliques = 0;
-        card.addEventListener("click", () => {
-            cliques++;
-            // Atualiza sutilmente o console ou a tela com a popularidade do card
-            console.log(`📊 O cavalo da posição ${index + 1} recebeu ${cliques} clique(s).`);
-        });
-    });
-}
-    
-    // Adiciona um contador de cliques/visitas interativo nos cards existentes
-    configurarContadorDeInteracoes();
-});
-
-// 3. FUNÇÃO PARA BUSCAR INFORMAÇÕES (Expansível para o seu site)
-function inicializarBusca() {
-    // Cria uma função global que você pode chamar pelo console ou por um input de texto
-    window.buscarCavalo = function(termo) {
-        const resultado = BANCO_DE_CAVALOS.filter(cavalo => 
-            cavalo.raca.toLowerCase().includes(termo.toLowerCase())
-        );
-        
-        if (resultado.length > 0) {
-            console.log(`🔎 Encontrado(s) ${resultado.length} resultado(s):`, resultado);
-            return resultado;
-        } else {
-            console.log("❌ Nenhuma raça encontrada com esse nome.");
-            return [];
-        }
-    };
-}
-
-// 4. CONTADOR DE CLIQUES (Métrica simples de engajamento)
-function configurarContadorDeInteracoes() {
-    const cards = document.querySelectorAll(".card");
-    
-    cards.forEach((card, index) => {
-        let cliques = 0;
-        card.addEventListener("click", () => {
-            cliques++;
-            // Atualiza sutilmente o console ou a tela com a popularidade do card
-            console.log(`📊 O cavalo da posição ${index + 1} recebeu ${cliques} clique(s).`);
-        });
-    });
-}
-            <div class="card">
-                <div class="card-img" style="background-color: #ddd;"></div>
-                <h3>Puro Sangue Lusitano</h3>
-                <p>Conhecido por sua inteligência, docilidade e movimentos elegantes. Excelente para adestramento.</p>
+        <div class="grid-racas" id="grid-racas">
             </div>
-            <div class="card">
-                <div class="card-img" style="background-color: #ccc;"></div>
-                <h3>Quarto de Milha</h3>
-                <p>O cavalo mais rápido em curtas distâncias. Muito versátil, robusto e ideal para o trabalho no campo.</p>
-            </div>
-            <div class="card">
-                <div class="card-img" style="background-color: #bbb;"></div>
-                <h3>Frísio (Friesian)</h3>
-                <p>Originário da Holanda, destaca-se por sua pelagem preta brilhante, crina longa e imponência física.</p>
-            </div>
-        </div>
     </section>
 
     <section id="cuidados" class="cuidados-section">
@@ -199,92 +44,27 @@ function configurarContadorDeInteracoes() {
             <h2>Cuidados Essenciais</h2>
             <div class="dicas-lista">
                 <div class="dica-item">
-                    <strong>Alimentação Balanceada:</strong> Pasto de qualidade, feno e água limpa em abundância são a base de um cavalo saudável.
+                    <h3>🌾 Alimentação Balanceada</h3>
+                    <p>Pasto de qualidade, feno e água limpa em abundância são a base de um cavalo saudável.</p>
                 </div>
                 <div class="dica-item">
-                    <strong>Casqueamento e Ferrageamento:</strong> Os cascos devem ser revisados e limpos diariamente, além do cuidado profissional a cada 4 a 6 semanas.
+                    <h3>🧲 Casqueamento e Ferrageamento</h3>
+                    <p>Os cascos devem ser revisados e limpos diariamente, além do cuidado profissional a cada 4 a 6 semanas.</p>
                 </div>
                 <div class="dica-item">
-                    <strong>Exercício Diário:</strong> Cavalos precisam de espaço para correr e se exercitar para manter a saúde mental e física em dia.
+                    <h3>🐎 Exercício Diário</h3>
+                    <p>Cavalos precisam de espaço para correr e se exercitar para manter a saúde mental e física em dia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contato">
-        <p>&copy; 2026 Mundo dos Cavalos. Criado com paixão pelo universo equino.</p>
+    <footer>
+        <p>&copy; 2026 Mundo dos Cavalos. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="index.js"></script>
+    <script src="script.js"></script>
+    <script src="style.js"></script>
 </body>
-</html>/**
- * ARCHIVO: index.js
- * Função: Core/Maestro do site, gerenciamento de dados e busca estruturada.
- */
-
-// 1. SIMULAÇÃO DE BANCO DE DADOS (Caso os arquivos da sua imagem tenham mais cavalos, basta adicioná-los aqui)
-const BANCO_DE_CAVALOS = [
-    {
-        id: 1,
-        raca: "Puro Sangue Lusitano",
-        origem: "Portugal",
-        temperamento: "Dócil e Inteligente",
-        caracteristica: "Excelente para adestramento e alta escola."
-    },
-    {
-        id: 2,
-        raca: "Quarto de Milha",
-        origem: "Estados Unidos",
-        temperamento: "Versátil e Veloz",
-        caracteristica: "O mais rápido em curtas distâncias, ótimo para trabalho."
-    },
-    {
-        id: 3,
-        raca: "Frísio (Friesian)",
-        origem: "Holanda",
-        temperamento: "Imponente e Gentil",
-        caracteristica: "Famoso por sua pelagem preta brilhante e crina longa."
-    }
-];
-
-// 2. INICIALIZAÇÃO DO SISTEMA
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("⚡ Sistema Index principal ativado.");
-    
-    // Configura uma barra de pesquisa dinâmica se ela existir no futuro
-    inicializarBusca();
-    
-    // Adiciona um contador de cliques/visitas interativo nos cards existentes
-    configurarContadorDeInteracoes();
-});
-
-// 3. FUNÇÃO PARA BUSCAR INFORMAÇÕES (Expansível para o seu site)
-function inicializarBusca() {
-    // Cria uma função global que você pode chamar pelo console ou por um input de texto
-    window.buscarCavalo = function(termo) {
-        const resultado = BANCO_DE_CAVALOS.filter(cavalo => 
-            cavalo.raca.toLowerCase().includes(termo.toLowerCase())
-        );
-        
-        if (resultado.length > 0) {
-            console.log(`🔎 Encontrado(s) ${resultado.length} resultado(s):`, resultado);
-            return resultado;
-        } else {
-            console.log("❌ Nenhuma raça encontrada com esse nome.");
-            return [];
-        }
-    };
-}
-
-// 4. CONTADOR DE CLIQUES (Métrica simples de engajamento)
-function configurarContadorDeInteracoes() {
-    const cards = document.querySelectorAll(".card");
-    
-    cards.forEach((card, index) => {
-        let cliques = 0;
-        card.addEventListener("click", () => {
-            cliques++;
-            // Atualiza sutilmente o console ou a tela com a popularidade do card
-            console.log(`📊 O cavalo da posição ${index + 1} recebeu ${cliques} clique(s).`);
-        });
-    });
-}
+</html>
